@@ -1,0 +1,176 @@
+/* ─── Tech tag ───────────────────────────────────────────── */
+.tech-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--olive-bg);
+  border: 1px solid rgba(74,92,58,0.2);
+  color: var(--olive);
+  border-radius: 2px;
+  padding: 3px 10px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.tech-tag:hover {
+  background: rgba(74,92,58,0.15);
+  border-color: var(--olive);
+}
+
+/* ─── Project card ───────────────────────────────────────── */
+.project-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+.project-card:hover { border-color: var(--border-md); }
+
+/* ─── Project number ─────────────────────────────────────── */
+.project-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 5rem;
+  font-weight: 400;
+  color: var(--border);
+  line-height: 1;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+.project-card:hover .project-number { color: rgba(74,92,58,0.12); }
+
+/* ─── Project image placeholder ──────────────────────────── */
+.project-visual {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+.project-visual-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.6;
+}
+.project-visual-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  opacity: 0.5;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Modal ──────────────────────────────────────────────── */
+#modal {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  background: rgba(245,240,232,0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+#modal.open { opacity: 1; pointer-events: all; }
+
+#modal-inner {
+  background: var(--bg);
+  border: 1px solid var(--border-md);
+  border-radius: 0;
+  transform: translateY(16px);
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+#modal.open #modal-inner { transform: translateY(0); }
+
+/* ─── SteriFlow Image Slider ─────────────────────────────── */
+.sf-slider-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--bg-2);
+  aspect-ratio: 16 / 10;
+  min-height: 240px;
+}
+
+/* Slides container */
+.sf-slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.sf-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  pointer-events: none;
+}
+
+.sf-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Prev / Next arrows */
+.sf-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(245,240,232,0.85);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+.sf-slider-wrap:hover .sf-arrow { opacity: 1; }
+.sf-arrow:hover { background: var(--olive); color: #f5f0e8; border-color: var(--olive); }
+.sf-prev { left: 10px; }
+.sf-next { right: 10px; }
+
+/* Dot indicators */
+.sf-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.sf-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(245,240,232,0.5);
+  border: 1px solid rgba(245,240,232,0.6);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.sf-dot.active {
+  background: var(--olive);
+  border-color: var(--olive);
+  transform: scale(1.3);
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yassine Gharbi — Software Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg:         '#f5f0e8',
+            'bg-2':     '#ede8de',
+            ink:        '#1a1209',
+            'ink-2':    '#3d3426',
+            'ink-dim':  '#8c7b65',
+            olive:      '#4a5c3a',
+            'olive-dim':'#6b7c5a',
+            'olive-bg': '#eef1ea',
+          },
+          fontFamily: {
+            display: ['DM Serif Display', 'serif'],
+            ui:      ['DM Sans',          'sans-serif'],
+            body:    ['DM Sans',          'sans-serif'],
+            mono:    ['DM Mono',          'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/projects.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
+</head>
+
+<body class="bg-bg text-ink overflow-x-hidden font-body">
+
+  <!-- Scroll progress bar -->
+  <div id="scroll-progress" style="width:0%"></div>
+
+  <!-- Back-to-top -->
+  <button id="back-top"
+          onclick="window.scrollTo({top:0,behavior:'smooth'})"
+          aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- Component mount points -->
+  <div data-component="navbar"></div>
+  <main>
+    <div data-component="hero"></div>
+    <div data-component="about"></div>
+    <div data-component="projects"></div>
+    <div data-component="contact"></div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/projects.js"></script>
+
+  <script>
+  async function loadComponents() {
+    const placeholders = document.querySelectorAll('[data-component]');
+    for (const placeholder of placeholders) {
+      const name = placeholder.dataset.component;
+      try {
+        const res  = await fetch(`components/${name}.html`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const html = await res.text();
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        placeholder.replaceWith(...temp.childNodes);
+      } catch (err) {
+        console.error(`[ComponentLoader] Failed to load "${name}":`, err);
+      }
+    }
+  }
+
+  loadComponents().then(() => {
+    try { initMain();       } catch(e) { console.error('initMain:', e); }
+    try { initNavbar();     } catch(e) { console.error('initNavbar:', e); }
+    try { initAnimations(); } catch(e) { console.error('initAnimations:', e); }
+    try { initProjects();   } catch(e) { console.error('initProjects:', e); }
+    try { initSFSlider();   } catch(e) { console.error('initSFSlider:', e); }
+  });
+</script>
+
+</body>
+</html>

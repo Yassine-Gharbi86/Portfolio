@@ -1,0 +1,111 @@
+<section id="home" class="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden" style="background:var(--bg);">
+
+  <!-- Subtle background grid -->
+  <div style="position:absolute;inset:0;pointer-events:none;opacity:0.4;
+    background-image:linear-gradient(var(--border) 1px,transparent 1px),
+                     linear-gradient(90deg,var(--border) 1px,transparent 1px);
+    background-size:60px 60px;"></div>
+
+  <!-- Side index label -->
+  <div class="hidden lg:flex" style="position:absolute;left:1.5rem;top:50%;transform:translateY(-50%);z-index:10;">
+    <span class="hero-index">Yassine Gharbi — 2026</span>
+  </div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 w-full">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Text -->
+      <div style="display:flex;flex-direction:column;gap:1.75rem;">
+
+        <!-- Eyebrow -->
+        <div class="reveal" style="display:flex;align-items:center;gap:0.75rem;">
+          <span style="display:inline-block;width:28px;height:1px;background:var(--olive);"></span>
+          <span class="section-label">Software Engineer</span>
+        </div>
+
+        <!-- Name -->
+        <div class="reveal reveal-delay-1">
+          <h1 class="font-display" style="font-size:clamp(3rem,7vw,5.5rem);font-weight:400;line-height:1;letter-spacing:-0.03em;color:var(--ink);">
+            Yassine<br>
+            <em style="font-style:italic;color:var(--olive);">Gharbi</em>
+          </h1>
+        </div>
+
+        <!-- Typewriter role -->
+        <div class="reveal reveal-delay-2">
+          <p class="font-mono" style="font-size:0.8rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-dim);">
+            <span class="typewriter" id="hero-subtitle"></span>
+          </p>
+        </div>
+
+        <!-- Description -->
+        <p class="reveal reveal-delay-3" style="color:var(--ink-dim);line-height:1.75;max-width:420px;font-size:0.97rem;">
+          I craft elegant digital experiences at the intersection of engineering precision and creative design —
+          turning complex problems into clean, performant solutions.
+        </p>
+
+        <!-- Buttons -->
+        <div class="reveal reveal-delay-4" style="display:flex;flex-wrap:wrap;gap:0.75rem;">
+          <a href="#projects" class="btn-primary " style="gap:0.5rem;">
+            View Projects
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#" class="btn-secondary " style="gap:0.5rem;">
+            Download CV
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="reveal reveal-delay-4" style="display:flex;gap:0;padding-top:0.5rem;">
+          <div class="stat-box">
+            <p class="font-display" style="font-size:2.2rem;font-weight:400;color:var(--ink);line-height:1;" data-count="75">75</p>
+            <p style="font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);margin-top:0.3rem;">Projects</p>
+          </div>
+          <div class="stat-box" style="padding-left:1.5rem;">
+            <p class="font-display" style="font-size:2.2rem;font-weight:400;color:var(--ink);line-height:1;" data-count="3">3</p>
+            <p style="font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);margin-top:0.3rem;">Years exp.</p>
+          </div>
+          <div class="stat-box" style="padding-left:1.5rem;">
+            <p class="font-display" style="font-size:2.2rem;font-weight:400;color:var(--ink);line-height:1;" data-count="2">2</p>
+            <p style="font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);margin-top:0.3rem;">Clients</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Photo -->
+      <div class="flex justify-center items-center reveal reveal-delay-2">
+        <div class="profile-frame float-anim" style="position:relative;z-index:1;">
+          <div style="width:340px;height:410px;overflow:hidden;">
+            <img src="assets/Yassine.jpg" alt="Yassine Gharbi"
+                 style="width:100%;height:100%;object-fit:cover;object-position:top;filter:grayscale(15%);">
+          </div>
+          <!-- Olive corner accent -->
+          <div style="position:absolute;bottom:-1px;right:-1px;width:48px;height:48px;background:var(--olive);display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f5f0e8" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scroll hint -->
+<div class="reveal" style="display:flex;justify-content:center;margin-top:4rem;">
+  <div class="scroll-indicator">
+    <span class="scroll-label">Scroll</span>
+    <div class="scroll-mouse">
+      <div class="scroll-wheel"></div>
+    </div>
+    <svg class="scroll-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <polyline points="6 9 12 15 18 9"/>
+</svg>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<div class="ink-divider max-w-6xl mx-auto" style="opacity:0.4;"></div>

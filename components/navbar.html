@@ -1,0 +1,47 @@
+<div id="navbar-stripe"></div>
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 mt-[3px]">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="#home" class="font-display text-xl tracking-tight" style="color:var(--ink);text-decoration:none;">
+      YG<span style="color:var(--olive)">.</span>
+    </a>
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex items-center gap-10">
+      <a href="#home"     class="nav-link">Home</a>
+      <a href="#about"    class="nav-link">About</a>
+      <a href="#skills"   class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact"  class="nav-link">Contact</a>
+    </div>
+
+    <!-- CTA -->
+    <a href="#contact" class="hidden md:inline-flex btn-primary gap-2 " style="padding:0.55rem 1.1rem;font-size:0.68rem;">
+      <span style="width:6px;height:6px;border-radius:50%;background:#4a5c3a;display:inline-block;margin-top:1px;flex-shrink:0;"></span>
+      Available for work
+    </a>
+
+    <!-- Mobile toggle -->
+    <button id="menu-toggle" class="md:hidden " aria-label="Menu"
+            style="background:none;border:none;color:var(--ink-dim);display:flex;align-items:center;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="3" y1="7"  x2="21" y2="7"/>
+        <line x1="3" y1="17" x2="21" y2="17"/>
+      </svg>
+    </button>
+
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" class="fixed top-0 left-0 right-0 z-40 pt-20 pb-8 md:hidden">
+  <div class="flex flex-col items-center gap-7">
+    <a href="#home"     class="nav-link text-base" onclick="closeMobile()">Home</a>
+    <a href="#about"    class="nav-link text-base" onclick="closeMobile()">About</a>
+    <a href="#skills"   class="nav-link text-base" onclick="closeMobile()">Skills</a>
+    <a href="#projects" class="nav-link text-base" onclick="closeMobile()">Projects</a>
+    <a href="#contact"  class="nav-link text-base" onclick="closeMobile()">Contact</a>
+  </div>
+</div>

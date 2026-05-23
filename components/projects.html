@@ -1,0 +1,167 @@
+<section id="projects" class="relative py-32 overflow-hidden" style="background:var(--bg);">
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="mb-20 reveal">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <span style="display:inline-block;width:28px;height:1px;background:var(--olive);"></span>
+        <span class="section-label">03 — Selected work</span>
+      </div>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+        <h2 class="section-title" style="font-size:clamp(2.4rem,5vw,4rem);">Featured<br><em style="color:var(--olive);">Projects</em></h2>
+        <p style="color:var(--ink-dim);max-width:340px;font-size:0.93rem;line-height:1.7;padding-bottom:0.4rem;">
+          A selection of work that pushed the limits of what I thought was possible.
+        </p>
+      </div>
+    </div>
+
+    <!-- Project 01 -->
+    <div class="project-card mb-px p-8 md:p-12 reveal" style="position:relative;">
+      <span class="project-number">01</span>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div style="display:flex;flex-direction:column;gap:1.25rem;">
+          <div>
+            <span class="section-label" style="color:var(--olive-dim);">Featured Project</span>
+            <h3 class="font-display" style="font-size:2rem;font-weight:400;letter-spacing:-0.02em;color:var(--ink);margin-top:0.35rem;">SteriFlow</h3>
+            <p style="font-size:0.83rem;color:var(--ink-dim);margin-top:0.2rem;">Smart sterilization workflow management platform</p>
+          </div>
+          <p style="color:var(--ink-dim);line-height:1.75;font-size:0.93rem;">
+            A modern healthcare workflow platform designed to streamline and monitor sterilization processes in medical environments. Features real-time equipment tracking, sterilization cycle monitoring, inventory management, role-based dashboards, and secure workflow automation. Built with modern web technologies for speed, reliability, and an intuitive user experience.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">Supabase</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Django REST Framework</span>
+            <span class="tech-tag">PostgreSQL</span>
+          </div>
+          <div style="display:flex;gap:0.75rem;">
+            <a href="https://github.com/Yassine-Gharbi86/SteriFlow-Prototype" class="btn-primary " style="gap:0.5rem;padding:0.6rem 1.25rem;font-size:0.68rem;">
+              GitHub
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+            <a href="https://yassine-gharbi86.github.io/SteriFlow-Prototype/login.html" class="btn-secondary " style="gap:0.5rem;padding:0.6rem 1.25rem;font-size:0.68rem;">
+              Live Demo
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- ── SteriFlow image slider ── -->
+        <div class="project-visual sf-slider-wrap" id="sf-slider">
+          <div class="sf-slides">
+            <img src="assets/projects_assets/SteriFlow/Steri1.png" class="sf-slide active" alt="SteriFlow screen 1">
+            <img src="assets/projects_assets/SteriFlow/steri2.png" class="sf-slide" alt="SteriFlow screen 2">
+            <img src="assets/projects_assets/SteriFlow/steri3.png" class="sf-slide" alt="SteriFlow screen 3">
+            <img src="assets/projects_assets/SteriFlow/steri4.png" class="sf-slide" alt="SteriFlow screen 4">
+          </div>
+          <!-- Prev / Next arrows -->
+          <button class="sf-arrow sf-prev" aria-label="Previous">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="sf-arrow sf-next" aria-label="Next">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <!-- Dot indicators -->
+          <div class="sf-dots">
+            <span class="sf-dot active"></span>
+            <span class="sf-dot"></span>
+            <span class="sf-dot"></span>
+            <span class="sf-dot"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="ink-divider" style="opacity:0.4;"></div>
+
+    <!-- Project 02 -->
+    <div class="project-card mb-px p-8 md:p-12 reveal" style="position:relative;">
+      <span class="project-number">02</span>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="project-visual order-2 md:order-1">
+          <div class="project-visual-grid"></div>
+          <span class="project-visual-label">Project preview</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1.25rem;" class="order-1 md:order-2">
+          <div>
+            <span class="section-label" style="color:var(--olive-dim);">Featured Project</span>
+            <h3 class="font-display" style="font-size:2rem;font-weight:400;letter-spacing:-0.02em;color:var(--ink);margin-top:0.35rem;">HorizonOS</h3>
+            <p style="font-size:0.83rem;color:var(--ink-dim);margin-top:0.2rem;">Next-gen productivity workspace</p>
+          </div>
+          <p style="color:var(--ink-dim);line-height:1.75;font-size:0.93rem;">
+            A browser-based operating system experience with a virtual desktop, drag-and-drop window
+            management, and a plugin ecosystem. Built in WebAssembly and React at near-native performance.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">WebAssembly</span>
+            <span class="tech-tag">Rust</span>
+            <span class="tech-tag">IndexedDB</span>
+            <span class="tech-tag">WebRTC</span>
+          </div>
+          <div style="display:flex;gap:0.75rem;">
+            <a href="#" class="btn-primary " style="gap:0.5rem;padding:0.6rem 1.25rem;font-size:0.68rem;">
+              GitHub
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+            <a href="#" class="btn-secondary " style="gap:0.5rem;padding:0.6rem 1.25rem;font-size:0.68rem;">
+              Live Demo
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ink-divider" style="opacity:0.4;"></div>
+
+    <!-- Project 03 -->
+    <div class="project-card p-8 md:p-12 reveal" style="position:relative;">
+      <span class="project-number">03</span>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div style="display:flex;flex-direction:column;gap:1.25rem;">
+          <div>
+            <span class="section-label" style="color:var(--olive-dim);">Featured Project</span>
+            <h3 class="font-display" style="font-size:2rem;font-weight:400;letter-spacing:-0.02em;color:var(--ink);margin-top:0.35rem;">Synaptic</h3>
+            <p style="font-size:0.83rem;color:var(--ink-dim);margin-top:0.2rem;">Social platform for researchers</p>
+          </div>
+          <p style="color:var(--ink-dim);line-height:1.75;font-size:0.93rem;">
+            A collaborative platform connecting researchers worldwide. Features real-time document
+            collaboration, graph-based knowledge mapping, and AI-assisted paper summarization.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">GraphQL</span>
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">OpenAI</span>
+          </div>
+          <div style="display:flex;gap:0.75rem;">
+            <a href="#" class="btn-primary " style="gap:0.5rem;padding:0.6rem 1.25rem;font-size:0.68rem;">
+              GitHub
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+            <a href="#" class="btn-secondary " style="gap:0.5rem;padding:0.6rem 1.25rem;font-size:0.68rem;">
+              Live Demo
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="project-visual">
+          <div class="project-visual-grid"></div>
+          <span class="project-visual-label">Project preview</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="ink-divider max-w-6xl mx-auto" style="opacity:0.4;"></div>
