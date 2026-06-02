@@ -3,9 +3,10 @@
    ───────────────────────────────────────────────────────── */
 
 const PROJECTS = [
-  { title: 'NeuralDash',  subtitle: 'AI Analytics Platform' },
-  { title: 'HorizonOS',   subtitle: 'Browser Operating System' },
-  { title: 'Synaptic',    subtitle: 'Research Platform' },
+  { title: 'SteriFlow',      subtitle: 'Healthcare Workflow Platform' },
+  { title: 'HomeSweetHome',  subtitle: 'Premium Real Estate Template' },
+  { title: 'HorizonOS',      subtitle: 'Browser Operating System' },
+  { title: 'Synaptic',       subtitle: 'Research Platform' },
 ];
 
 let _modal = null;
@@ -42,26 +43,9 @@ function initCardAccents() {
   });
 }
 
-/* ─── Boot ──────────────────────────────────────────────── */
-function initProjects() {
-  _modal = document.getElementById('modal');
-
-  if (_modal) {
-    _modal.addEventListener('click', e => {
-      if (e.target === _modal) closeModal();
-    });
-  }
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModal();
-  });
-
-  initCardAccents();
-}
-
-/* ─── SteriFlow Image Slider ─────────────────────────────── */
-function initSFSlider() {
-  const wrap   = document.getElementById('sf-slider');
+/* ─── Generic slider factory ────────────────────────────── */
+function initSlider(wrapperId, interval) {
+  const wrap = document.getElementById(wrapperId);
   if (!wrap) return;
 
   const slides = wrap.querySelectorAll('.sf-slide');
@@ -80,25 +64,64 @@ function initSFSlider() {
   }
 
   function startAuto() {
-    timer = setInterval(() => goTo(current + 1), 3500);
+    timer = setInterval(() => goTo(current + 1), interval);
   }
 
   function stopAuto() {
     clearInterval(timer);
   }
 
-  // Arrow clicks
-  prev.addEventListener('click', () => { stopAuto(); goTo(current - 1); startAuto(); });
-  next.addEventListener('click', () => { stopAuto(); goTo(current + 1); startAuto(); });
-
-  // Dot clicks
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => { stopAuto(); goTo(i); startAuto(); });
+  // Show/hide arrows via JS — bypasses all CSS caching/specificity issues
+  wrap.addEventListener('mouseenter', () => {
+    stopAuto();
+    prev.style.opacity = '1';
+    next.style.opacity = '1';
+  });
+  wrap.addEventListener('mouseleave', () => {
+    startAuto();
+    prev.style.opacity = '0';
+    next.style.opacity = '0';
   });
 
-  // Pause on hover
-  wrap.addEventListener('mouseenter', stopAuto);
-  wrap.addEventListener('mouseleave', startAuto);
+  prev.addEventListener('click', (e) => {
+    e.stopPropagation();
+    stopAuto();
+    goTo(current - 1);
+    startAuto();
+  });
+  next.addEventListener('click', (e) => {
+    e.stopPropagation();
+    stopAuto();
+    goTo(current + 1);
+    startAuto();
+  });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      stopAuto();
+      goTo(i);
+      startAuto();
+    });
+  });
 
   startAuto();
+}
+/* ─── Boot ──────────────────────────────────────────────── */
+function initProjects() {
+  _modal = document.getElementById('modal');
+
+  if (_modal) {
+    _modal.addEventListener('click', e => {
+      if (e.target === _modal) closeModal();
+    });
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  initCardAccents();
+  initSlider('sf-slider',  5500);
+  initSlider('hsh-slider', 5500);
 }

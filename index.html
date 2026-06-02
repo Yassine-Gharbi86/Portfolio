@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yassine Gharbi — Software Engineer</title>
 
-  <!-- Fonts -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- Tailwind -->
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -43,6 +43,7 @@
   <link rel="stylesheet" href="assets/css/hero.css">
   <link rel="stylesheet" href="assets/css/projects.css">
   <link rel="stylesheet" href="assets/css/contact.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
 </head>
 
 <body class="bg-bg text-ink overflow-x-hidden font-body">
@@ -74,6 +75,7 @@
   <script src="assets/js/navbar.js"></script>
   <script src="assets/js/animations.js"></script>
   <script src="assets/js/projects.js"></script>
+  <script src="assets/js/lightbox.js"></script>
 
   <script>
   async function loadComponents() {
@@ -98,7 +100,7 @@
     try { initNavbar();     } catch(e) { console.error('initNavbar:', e); }
     try { initAnimations(); } catch(e) { console.error('initAnimations:', e); }
     try { initProjects();   } catch(e) { console.error('initProjects:', e); }
-    try { initSFSlider();   } catch(e) { console.error('initSFSlider:', e); }
+    try { initLightbox();   } catch(e) { console.error('initLightbox:', e); }
   });
 </script>
 

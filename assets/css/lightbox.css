@@ -1,0 +1,120 @@
+/* ─── Lightbox ───────────────────────────────────────────── */
+.lb-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 8, 5, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+.lb-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Image wrapper */
+.lb-img-wrap {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lb-img {
+  max-width: 90vw;
+  max-height: 82vh;
+  object-fit: contain;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.lb-overlay.open .lb-img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Close button */
+.lb-close {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.5rem;
+  z-index: 10000;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #f5f0e8;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.lb-close:hover { background: var(--olive); border-color: var(--olive); }
+
+/* Arrows */
+.lb-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  background: rgba(245,240,232,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #f5f0e8;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.lb-arrow:hover { background: var(--olive); border-color: var(--olive); }
+.lb-arrow-prev { left: 1.25rem; }
+.lb-arrow-next { right: 1.25rem; }
+
+/* Counter */
+.lb-counter {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: rgba(245,240,232,0.45);
+}
+
+/* Dots */
+.lb-dots {
+  position: fixed;
+  bottom: 2.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+}
+.lb-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s;
+}
+.lb-dot.active {
+  background: var(--olive);
+  transform: scale(1.35);
+}
+
+/* Cursor hint on slider images */
+.sf-slide { cursor: zoom-in; }

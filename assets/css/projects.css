@@ -92,21 +92,26 @@
 }
 #modal.open #modal-inner { transform: translateY(0); }
 
-/* ─── SteriFlow Image Slider ─────────────────────────────── */
-.sf-slider-wrap {
+/* ─── Slider wrappers ────────────────────────────────────── */
+.sf-slider-wrap,
+.hsh-slider-wrap {
   position: relative;
-  overflow: hidden;
   border-radius: 2px;
   background: var(--bg-2);
   aspect-ratio: 16 / 10;
   min-height: 240px;
+  width: 100%;
+  /* NO overflow:hidden here — slides are clipped by .sf-slides instead */
 }
 
-/* Slides container */
+/* Slides container — this is what clips the images */
 .sf-slides {
-  position: relative;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  border-radius: 2px;
 }
 
 .sf-slide {
@@ -118,6 +123,7 @@
   opacity: 0;
   transition: opacity 0.7s ease;
   pointer-events: none;
+  cursor: zoom-in;
 }
 
 .sf-slide.active {
@@ -125,12 +131,12 @@
   pointer-events: auto;
 }
 
-/* Prev / Next arrows */
+/* ─── Prev / Next arrows ─────────────────────────────────── */
 .sf-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 20;
   background: rgba(245,240,232,0.85);
   border: 1px solid var(--border);
   color: var(--ink);
@@ -143,12 +149,11 @@
   opacity: 0;
   transition: opacity 0.2s ease, background 0.2s ease;
 }
-.sf-slider-wrap:hover .sf-arrow { opacity: 1; }
 .sf-arrow:hover { background: var(--olive); color: #f5f0e8; border-color: var(--olive); }
 .sf-prev { left: 10px; }
 .sf-next { right: 10px; }
 
-/* Dot indicators */
+/* ─── Dot indicators ─────────────────────────────────────── */
 .sf-dots {
   position: absolute;
   bottom: 10px;
@@ -156,7 +161,7 @@
   transform: translateX(-50%);
   display: flex;
   gap: 6px;
-  z-index: 10;
+  z-index: 20;
 }
 
 .sf-dot {
