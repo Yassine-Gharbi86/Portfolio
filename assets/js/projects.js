@@ -122,7 +122,7 @@ function initProjects() {
   });
 
   initCardAccents();
-  initSlider('sf-slider',  5500);
-  initSlider('hsh-slider', 5500);
-  initSlider('jz-slider',  5500);
+  initSlider('sf-slider',  7000);
+  initSlider('hsh-slider', 7000);
+  initSlider('jz-slider',  7000);
 }
