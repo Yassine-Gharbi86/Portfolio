@@ -94,14 +94,14 @@
 
 /* ─── Slider wrappers ────────────────────────────────────── */
 .sf-slider-wrap,
-.hsh-slider-wrap {
+.hsh-slider-wrap,
+.jz-slider-wrap {
   position: relative;
   border-radius: 2px;
   background: var(--bg-2);
   aspect-ratio: 16 / 10;
   min-height: 240px;
   width: 100%;
-  /* NO overflow:hidden here — slides are clipped by .sf-slides instead */
 }
 
 /* Slides container — this is what clips the images */
@@ -149,6 +149,9 @@
   opacity: 0;
   transition: opacity 0.2s ease, background 0.2s ease;
 }
+.sf-slider-wrap:hover .sf-arrow,
+.hsh-slider-wrap:hover .sf-arrow,
+.jz-slider-wrap:hover .sf-arrow { opacity: 1; }
 .sf-arrow:hover { background: var(--olive); color: #f5f0e8; border-color: var(--olive); }
 .sf-prev { left: 10px; }
 .sf-next { right: 10px; }

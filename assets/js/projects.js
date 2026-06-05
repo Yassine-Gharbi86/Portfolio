@@ -124,4 +124,5 @@ function initProjects() {
   initCardAccents();
   initSlider('sf-slider',  5500);
   initSlider('hsh-slider', 5500);
+  initSlider('jz-slider',  5500);
 }
