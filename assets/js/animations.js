@@ -1,8 +1,5 @@
-/* ─────────────────────────────────────────────────────────
-   animations.js  —  Particle network · Typewriter effect
-   ───────────────────────────────────────────────────────── */
 
-/* ─── Particle Background ───────────────────────────────── */
+/* Particle Background*/
 function initParticles() {
   const canvas = document.getElementById('particle-canvas');
   if (!canvas) return;
@@ -68,7 +65,7 @@ function initParticles() {
   })();
 }
 
-/* ─── Typewriter Effect ─────────────────────────────────── */
+/* Typewriter Effect */
 function initTypewriter() {
   const el = document.getElementById('hero-subtitle');
   if (!el) return;
@@ -101,7 +98,7 @@ function initTypewriter() {
   }
   setTimeout(tick, 800);
 }
-/* ─── Boot ──────────────────────────────────────────────── */
+/* Boot */
 function initAnimations() {
   initTypewriter();
 }

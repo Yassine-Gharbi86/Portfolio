@@ -1,8 +1,5 @@
-/* ─────────────────────────────────────────────────────────
-   main.js  —  cursor · scroll · reveal · counters
-   ───────────────────────────────────────────────────────── */
 
-/* ─── Custom Cursor ─────────────────────────────────────── */
+/*Custom Cursor*/
 function initCursor() {
   const cursor = document.getElementById('cursor');
   const ring   = document.getElementById('cursor-ring');
@@ -24,7 +21,7 @@ function initCursor() {
   })();
 }
 
-/* ─── Scroll Progress + Back-to-Top ─────────────────────── */
+/*Scroll Progress + Back-to-Top*/
 function initScrollProgress() {
   const bar     = document.getElementById('scroll-progress');
   const backTop = document.getElementById('back-top');
@@ -37,7 +34,7 @@ function initScrollProgress() {
   });
 }
 
-/* ─── Section Reveal ────────────────────────────────────── */
+/*Section Reveal*/
 function initReveal() {
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -59,10 +56,10 @@ function initReveal() {
     });
   }
 
-  // Wait for layout to fully settle after component injection
+
   setTimeout(observeAll, 300);
 
-  // Fallback: re-check on scroll in case observer misses anything
+
   window.addEventListener('scroll', () => {
     document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
       const rect = el.getBoundingClientRect();
@@ -74,7 +71,7 @@ function initReveal() {
   }, { passive: true });
 }
 
-/* ─── Boot ──────────────────────────────────────────────── */
+
 function initMain() {
   initCursor();
   initScrollProgress();

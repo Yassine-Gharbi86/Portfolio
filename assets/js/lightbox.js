@@ -104,7 +104,7 @@ function initLightbox() {
 
 
   function bindAllSliders() {
-    document.querySelectorAll('.sf-slider-wrap, .hsh-slider-wrap, .jz-slider-wrap').forEach(sliderEl => {
+    document.querySelectorAll('.sf-slider-wrap, .hsh-slider-wrap, .jz-slider-wrap, .rai-slider-wrap').forEach(sliderEl => {
       const slides = sliderEl.querySelectorAll('.sf-slide');
       const srcs   = Array.from(slides).map(s => s.src);
       slides.forEach((slide, i) => {

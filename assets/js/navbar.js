@@ -1,6 +1,3 @@
-/* ─────────────────────────────────────────────────────────
-   navbar.js  —  scroll effect · mobile menu
-   ───────────────────────────────────────────────────────── */
 
 function initNavbar() {
   const navbar     = document.getElementById('navbar');

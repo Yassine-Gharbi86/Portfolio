@@ -95,7 +95,8 @@
 /* ─── Slider wrappers ────────────────────────────────────── */
 .sf-slider-wrap,
 .hsh-slider-wrap,
-.jz-slider-wrap {
+.jz-slider-wrap,
+.rai-slider-wrap {
   position: relative;
   border-radius: 2px;
   background: var(--bg-2);
@@ -151,12 +152,13 @@
 }
 .sf-slider-wrap:hover .sf-arrow,
 .hsh-slider-wrap:hover .sf-arrow,
-.jz-slider-wrap:hover .sf-arrow { opacity: 1; }
+.jz-slider-wrap:hover .sf-arrow,
+.rai-slider-wrap:hover .sf-arrow { opacity: 1; }
 .sf-arrow:hover { background: var(--olive); color: #f5f0e8; border-color: var(--olive); }
 .sf-prev { left: 10px; }
 .sf-next { right: 10px; }
 
-/* ─── Dot indicators ─────────────────────────────────────── */
+/* Dot indicators */
 .sf-dots {
   position: absolute;
   bottom: 10px;

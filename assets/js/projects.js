@@ -1,6 +1,3 @@
-/* ─────────────────────────────────────────────────────────
-   projects.js  —  project card interactions · modal
-   ───────────────────────────────────────────────────────── */
 
 const PROJECTS = [
   { title: 'SteriFlow',      subtitle: 'Healthcare Workflow Platform' },
@@ -29,7 +26,7 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
-/* ─── Project card hover accent ─────────────────────────── */
+/*Project card hover accent*/
 function initCardAccents() {
   document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mouseenter', () => {
@@ -43,7 +40,7 @@ function initCardAccents() {
   });
 }
 
-/* ─── Generic slider factory ────────────────────────────── */
+/* Generic slider factory */
 function initSlider(wrapperId, interval) {
   const wrap = document.getElementById(wrapperId);
   if (!wrap) return;
@@ -71,7 +68,7 @@ function initSlider(wrapperId, interval) {
     clearInterval(timer);
   }
 
-  // Show/hide arrows via JS — bypasses all CSS caching/specificity issues
+  
   wrap.addEventListener('mouseenter', () => {
     stopAuto();
     prev.style.opacity = '1';
@@ -107,7 +104,7 @@ function initSlider(wrapperId, interval) {
 
   startAuto();
 }
-/* ─── Boot ──────────────────────────────────────────────── */
+/*Boot */
 function initProjects() {
   _modal = document.getElementById('modal');
 
@@ -125,4 +122,5 @@ function initProjects() {
   initSlider('sf-slider',  7000);
   initSlider('hsh-slider', 7000);
   initSlider('jz-slider',  7000);
+  initSlider('rai-slider', 7000);
 }
